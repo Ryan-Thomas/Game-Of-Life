@@ -22,6 +22,12 @@ export default class TopControls extends React.Component {
 				<h4 style={{display: "inline", marginLeft: "10px" }}>
 					<span className="label label-info">Generation: {this.props.generation}</span>
 				</h4>
+				<br />
+				<button className="btn btn-primary btn-lg"
+								onClick={this.props.randomize}
+								style={{ marginTop: "20px" }} >
+					Randomize!
+				</button>
 			</div>
 		)
 	}
@@ -32,4 +38,5 @@ TopControls.propTypes = {
 	handlePause: React.PropTypes.func.isRequired,
 	handleClear: React.PropTypes.func.isRequired,
 	generation: React.PropTypes.number.isRequired,
+	randomize: React.PropTypes.func.isRequired,
 };

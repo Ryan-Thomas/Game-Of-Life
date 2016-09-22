@@ -114,18 +114,24 @@ function getNextState(index, rowLength, oldCells) {
 	return 0;
 }
 
+// Function to redirect user to Github repo for this project
+function openGithub() {
+	const url = "https://github.com/Ryan-Thomas/Game-Of-Life";
+	window.open(url, "_blank");
+}
+
 export default class Game extends React.Component {
 	randomize() {
 		const cells = [];
 		for (let i = 0; i < this.state.cells.length; i++) {
-			let state = Math.floor(Math.random() * 5);
+			let state = Math.floor(Math.random() * 7);
 			if (state > 2) {
 				state = 0;
 			}
 			cells.push(state);
 		}
 		this.setState({
-		  cells,
+			cells,
 		});
 	}
 	componentWillMount() {
@@ -244,25 +250,28 @@ export default class Game extends React.Component {
 	}
 	render() {
 		return (
-			<div style={{
-				textAlign: "center",
-			}}>
+			<div style={{ textAlign: "center" }}>
 				<TopControls running={this.state.running}
 										 handleRun={this.handleRunClick}
 										 handlePause={this.handlePause}
 										 handleClear={this.handleClear}
-										 generation={this.state.generation} />
+										 generation={this.state.generation}
+										 randomize={this.randomize} />
 				<Board running={this.state.running}
 							 size={this.state.size}
 							 speed={this.state.speed}
 							 cells={this.state.cells}
 							 rowLength={this.state.rowLength}
 							 updateCells={this.updateCells}
-							 handleClick={this.handleClick}/>
+							 handleClick={this.handleClick} />
 				<BottomControls setSpeed={this.setSpeed}
 												setSize={this.setSize}
 												speed={this.state.speed}
 												size={this.state.size} />
+				<button className="btn btn-link btn-large"
+								onClick={openGithub} style={{ marginBottom: "30px" }} >
+					Github Repository
+				</button>
 			</div>
 		)
 	}
