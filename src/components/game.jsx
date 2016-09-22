@@ -132,6 +132,7 @@ export default class Game extends React.Component {
 		}
 		this.setState({
 			cells,
+			generation: 0,
 		});
 	}
 	componentWillMount() {
@@ -224,15 +225,15 @@ export default class Game extends React.Component {
 	constructor(props) {
 		super(props);
 		const cells = [];
-		const size = 3500;
+		const size = 1500;
 		for (let i = 0; i < size; i++) {
 			cells.push(0);
 		}
 		this.state = {
 			running: false,
 			size,
-			speed: 0.3,
-			rowLength: 70,
+			speed: 0.1,
+			rowLength: 50,
 			cells,
 			generation: 0,
 		};
