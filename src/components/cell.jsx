@@ -13,11 +13,10 @@ export default class Cell extends React.Component {
 		return (
 			<div onClick={this.handleClick}
 					 style={{
-						 width: "10px",
-						 height: "10px",
+						 width: this.props.baseLength,
+						 height: this.props.baseLength,
 						 backgroundColor: this.props.color,
 						 display: "inline-block",
-						 verticalAlign: "top",
 						 borderLeft: "1px solid darkgrey",
 						 borderTop: "1px solid darkgrey",
 					 }}>
@@ -30,4 +29,5 @@ Cell.propTypes = {
 	color: React.PropTypes.string.isRequired,
 	handleClick: React.PropTypes.func.isRequired,
 	index: React.PropTypes.number.isRequired,
+	baseLength: React.PropTypes.string.isRequired,
 };

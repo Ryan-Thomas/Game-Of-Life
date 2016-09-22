@@ -19,9 +19,9 @@ export default class TopControls extends React.Component {
 				<button className={runButtonText} onClick={this.props.handleRun}>Run</button>
 				<button className={pauseButtonText} onClick={this.props.handlePause}>Pause</button>
 				<button className="btn btn-danger" onClick={this.props.handleClear}>Clear</button>
-				<h5 style={{display: "inline", marginLeft: "10px" }}>
+				<h4 style={{display: "inline", marginLeft: "10px" }}>
 					<span className="label label-info">Generation: {this.props.generation}</span>
-				</h5>
+				</h4>
 			</div>
 		)
 	}
