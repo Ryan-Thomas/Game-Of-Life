@@ -28,6 +28,8 @@ export default class TopControls extends React.Component {
 								style={{ marginTop: "20px" }} >
 					Randomize!
 				</button>
+				<h4 style={{ marginTop: "20px" }}>Click cells to switch them on or off</h4>
+				<h4>Have fun! :D</h4>
 			</div>
 		)
 	}
